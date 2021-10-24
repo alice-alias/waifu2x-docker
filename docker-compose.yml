@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  conv:
+    build:
+      context: .
+    command: ["waifu2x-converter-cpp", "-m", "scale", "-i", "/var/opt/in", "-o", "/var/opt/out", "--scale-ratio", "4.0"]
+    volumes:
+      - ./in:/var/opt/in
+      - ./out:/var/opt/out

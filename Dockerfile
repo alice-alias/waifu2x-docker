@@ -3,21 +3,23 @@ FROM ubuntu AS build
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
-RUN apt-get install -y beignet-opencl-icd
-RUN apt-get install -y build-essential
-RUN apt-get install -y cmake
-RUN apt-get install -y git
-RUN apt-get install -y libavcodec-dev
-RUN apt-get install -y libc6-dev
-RUN apt-get install -y libexpat1-dev
-RUN apt-get install -y libgl1-mesa-dev
-RUN apt-get install -y libopencv-dev
-RUN apt-get install -y libssl-dev
-RUN apt-get install -y ocl-icd-opencl-dev
-RUN apt-get install -y opencl-headers
-RUN apt-get install -y pkg-config
-RUN apt-get install -y python3-opencv
-RUN apt-get install -y zlib1g-dev
+RUN apt-get install -y \
+    git \
+    \
+    g++ \
+    cmake \
+    \
+    libavcodec-dev \
+    libc6-dev \
+    libexpat1-dev \
+    libgl1-mesa-dev \
+    libopencv-dev \
+    libssl-dev \
+    ocl-icd-opencl-dev \
+    opencl-headers \
+    pkg-config \
+    python3-opencv \
+    zlib1g-dev
 
 WORKDIR /root
 

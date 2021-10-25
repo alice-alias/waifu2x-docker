@@ -20,7 +20,7 @@ jobs:
         run: echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com -u ${{ github.repository_owner }} --password-stdin
 
       - name: Build image
-        run: docker build -t docker.pkg.github.com/${{ github.repository }} --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }} .
+        run: docker build -t docker.pkg.github.com/${{ github.repository }}/waifu2x-docker --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }} .
 
       - name: Push image
-        run: docker push docker.pkg.github.com/${{ github.repository }}
+        run: docker push docker.pkg.github.com/${{ github.repository }}/waifu2x-docker
